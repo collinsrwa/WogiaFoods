@@ -1,4 +1,5 @@
 ﻿using System;
+using WogiaFoods.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,9 @@ namespace WogiaFoods
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            //MainPage = new MainPage();
+            //Setting main page as login
+            MainPage = new LoginView();
         }
 
         protected override void OnStart()
