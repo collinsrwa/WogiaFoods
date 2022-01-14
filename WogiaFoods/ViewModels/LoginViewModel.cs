@@ -83,10 +83,13 @@ namespace WogiaFoods.ViewModels
                 IsBusy = true;
                 var userService = new UserService();
                 Result = await userService.RegisterUser(UserName, Password);
-                if(Result)
+                if (Result)
                     await Application.Current.MainPage.DisplayAlert("Success", "User Registered", "Ok");
                 else
+                {
                     await Application.Current.MainPage.DisplayAlert("Error", "User with same credentials already exists", "Ok");
+                }
+                    
             }
             catch (Exception ex)
             {
@@ -94,7 +97,7 @@ namespace WogiaFoods.ViewModels
             }
             finally
             {
-                IsBusy = true;
+                IsBusy = false;
             }
         }
 
@@ -123,7 +126,7 @@ namespace WogiaFoods.ViewModels
             }
             finally
             {
-                IsBusy = true;
+                IsBusy = false;
             }
         }
     }

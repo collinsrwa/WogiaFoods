@@ -4,6 +4,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using PCLAppConfig;
 
 namespace WogiaFoods.Droid
 {
@@ -20,6 +21,7 @@ namespace WogiaFoods.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             //Adding material design
             global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
+           // ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

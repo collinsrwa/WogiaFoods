@@ -1,5 +1,6 @@
 ﻿using System;
 using WogiaFoods.Views;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,7 +14,13 @@ namespace WogiaFoods
 
             //MainPage = new MainPage();
             //Setting main page as login
-            MainPage = new LoginView();
+            //MainPage = new LoginView();
+            //MainPage = new NavigationPage(new SettingsPage());
+           var uname = Preferences.Get("UserName", string.Empty);
+           if (String.IsNullOrEmpty(uname))
+               MainPage = new LoginView();
+           else
+               MainPage = new ProductsView();
         }
 
         protected override void OnStart()

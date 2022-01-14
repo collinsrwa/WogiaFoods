@@ -12,14 +12,10 @@ namespace WogiaFoods.Services
     class UserService
     {
         FirebaseClient client;
-        public UserService(FirebaseClient client)
-        {
-            this.client = client;
-            client = new FirebaseClient("https://wogiafoods-default-rtdb.firebaseio.com/");
-        }
-
+        string fireBaseUrl = AppSettingsManager.Settings["ConnectionStrings:FireBaseDB"];
         public UserService()
         {
+            client = new FirebaseClient(fireBaseUrl);
         }
 
         public async Task<bool> UserExists(string userName)
