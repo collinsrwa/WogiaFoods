@@ -16,11 +16,11 @@ namespace WogiaFoods
             //Setting main page as login
             //MainPage = new LoginView();
             //MainPage = new NavigationPage(new SettingsPage());
-           var uname = Preferences.Get("UserName", string.Empty);
-           if (String.IsNullOrEmpty(uname))
-               MainPage = new LoginView();
-           else
-               MainPage = new ProductsView();
+            var uname = Preferences.Get("UserName", string.Empty);
+            if (String.IsNullOrEmpty(uname))
+                MainPage = new LoginView();
+            else
+                MainPage = new ProductsView();
         }
 
         protected override void OnStart()

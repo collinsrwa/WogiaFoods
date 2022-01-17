@@ -10,17 +10,21 @@ using Xamarin.Forms.Xaml;
 namespace WogiaFoods.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ViewCart : ContentPage
+    public partial class OrdersView : ContentPage
     {
-        public ViewCart()
+        public OrdersView(string id)
         {
             InitializeComponent();
             LabelName.Text = "Welcome " + Preferences.Get("UserName", "Guest") + ",";
+            LabelOrderID.Text = id;
         }
         async void ImageButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
         }
-
+        async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new ProductsView());
+        }
     }
 }

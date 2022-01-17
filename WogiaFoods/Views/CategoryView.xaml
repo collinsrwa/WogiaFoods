@@ -32,12 +32,13 @@
                     </Grid.RowDefinitions>
                     <Label Grid.Row="0" Grid.Column="0" Text="{Binding TotalFoodItems,
                         StringFormat='{0} Total Items'}" FontAttributes="Bold" FontSize="18"/>
-                    <Image Source="More" Grid.Row="0" Grid.Column="1"/>
+                    <!--<Image Source="More" Grid.Row="0" Grid.Column="1"/>-->
                     <CollectionView ItemsSource="{Binding FoodItemsByCategory}"
                                     VerticalOptions="Start"
                                     VerticalScrollBarVisibility="Never"
                                     Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-                                    SelectionChanged="CollectionView_SelectionChanged">
+                                    SelectionChanged="CollectionView_SelectionChanged"
+                                    SelectionMode="Single">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <StackLayout>

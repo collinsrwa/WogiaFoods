@@ -27,5 +27,13 @@ namespace WogiaFoods.Views
             var addFoodItemData = new AddFoodItemData();
             await addFoodItemData.AddFoodItemAsync();
         }
+         void BtnCart_Clicked(System.Object sender, System.EventArgs e)
+        {
+            var createTable = new CreateCartTable();
+            if (createTable.CreateTable())
+                DisplayAlert("Success", "Cart Created Table", "Ok");
+            else
+                DisplayAlert("Error", "Error while creating Table", "Ok");
+        }
     }
 }

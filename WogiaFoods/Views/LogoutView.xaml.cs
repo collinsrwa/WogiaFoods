@@ -16,5 +16,9 @@ namespace WogiaFoods.Views
         {
             InitializeComponent();
         }
+        async void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
+        }
     }
 }

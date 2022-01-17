@@ -25,7 +25,7 @@ namespace WogiaFoods.Views
         {
             await Navigation.PopModalAsync();
         }
-        async void CollectionView_SelectionChanged(object sender, Xamarin.Forms.SelectionChangedEventArgs e)
+        async void CollectionView_SelectionChanged(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e)
         {
             var selectedProduct = e.CurrentSelection.FirstOrDefault() as FoodItem;
             if (selectedProduct == null)

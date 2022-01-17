@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using WogiaFoods.Models;
+using Xamarin.Forms;
 
 namespace WogiaFoods.Services
 {
@@ -8,10 +10,17 @@ namespace WogiaFoods.Services
     {
         public int GetUserCartCount()
         {
-            return 0;
+            var conn = DependencyService.Get<ISQLite>().GetConnection();
+            var count = conn.Table<CartItem>().Count();
+            conn.Close();
+            return count;
         }
         public void RemoveItemsFromCart()
         {
+            var conn = DependencyService.Get<ISQLite>().GetConnection();
+            conn.DeleteAll<CartItem>();
+            conn.Commit();
+            conn.Close();
 
         }
     }
